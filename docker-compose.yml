@@ -1,0 +1,9 @@
+version: '2'
+services:
+  ble:
+    container_name: ble_peripheral
+    build: .
+    privileged: true
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./src:/src

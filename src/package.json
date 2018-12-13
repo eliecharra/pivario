@@ -1,0 +1,12 @@
+{
+  "name": "pivario",
+  "version": "0.0.1",
+  "description": "variometer on raspbery pi",
+  "dependencies": {
+    "bleno": "^0.4.2",
+    "bluetooth-hci-socket": "^0.5.1",
+    "bmp085": "^1.0.0",
+    "nmea-checksum": "^0.0.1",
+    "rpi-gpio": "^0.8.1"
+  }
+}
