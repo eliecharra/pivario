@@ -1,0 +1,15 @@
+[Unit]
+Description=Vario bluetooth
+After=syslog.target network.target docker.service
+Requires=docker.service
+
+[Service]
+Restart=always
+RestartSec=10
+ExecStartPre=-/usr/bin/docker kill pivario
+ExecStartPre=-/usr/bin/docker rm pivario
+ExecStart=/usr/bin/docker run --rm --name pivario --privileged --net=host eliecharra/pivario
+ExecStop=/usr/bin/docker kill pivario
+
+[Install]
+WantedBy=multi-user.target
