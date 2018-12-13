@@ -1,7 +1,7 @@
 var bleno = require('bleno');
 var checksum = require('nmea-checksum');
 var BMP085 = require('bmp085'),
-    barometer = new BMP085();
+    barometer = new BMP085({'mode': 3});
 
 let pressure = 0;
 setInterval(function(){barometer.read(function (data) {
