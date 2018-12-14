@@ -12,7 +12,7 @@ setInterval(function(){barometer.read(function (data) {
 
 bleno.on('stateChange', function(state) {
     if (state === 'poweredOn') {
-        bleno.startAdvertising('MyDevice',['e079c6a0-aa8b-11e3-a903-0002a5d5c51b']);
+        bleno.startAdvertising('pivario',['e079c6a0-aa8b-11e3-a903-0002a5d5c51b']);
     } else {
         bleno.stopAdvertising();
     }
