@@ -10,7 +10,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
 		libbluetooth-dev \
 		libudev-dev
 
-ADD src/package.json src/packge-lock.json /app/
+ADD src/package.json src/package-lock.json /app/
 RUN npm install
 ADD src /app
 
