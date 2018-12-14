@@ -1,6 +1,4 @@
-version: '2'
-services:
-  pivario:
-    build: .
-    network_mode: host
-    privileged: true
+pivario:
+  build: .
+  network_mode: host
+  privileged: true
