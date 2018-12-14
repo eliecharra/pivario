@@ -1,4 +1,4 @@
-FROM resin/raspberrypi3-node:8-slim
+FROM resin/raspberry-pi-node:8-slim
 WORKDIR /app
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \

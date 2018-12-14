@@ -3,7 +3,7 @@ var checksum = require('nmea-checksum');
 var BMP085 = require('bmp085'),
     barometer = new BMP085({'mode': 3});
 
-let pressure = 0;
+let pressure = 999999;
 setInterval(function(){barometer.read(function (data) {
     if (data !== null) {
         pressure = Math.round(data.pressure * 100);

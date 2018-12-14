@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "variometer on raspbery pi",
   "scripts": {
-    "start": "node main.js"
+    "start": "modprobe i2c-dev && node main.js"
   },
   "dependencies": {
     "bleno": "^0.5.0",
