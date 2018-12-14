@@ -1,7 +1,9 @@
 version: '2'
 services:
   pivario:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile.template
     network_mode: host
     devices:
       - "/dev/i2c-1:/dev/i2c-1"
