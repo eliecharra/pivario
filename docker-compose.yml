@@ -1,4 +1,9 @@
-pivario:
-  build: .
-  network_mode: host
-  privileged: true
+version: '2'
+services:
+  pivario:
+    build: .
+    network_mode: host
+    devices:
+      - "/dev/i2c-1:/dev/i2c-1"
+    cap_add:
+      - SYS_RAWIO
