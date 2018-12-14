@@ -1,8 +1,6 @@
 version: '2'
 services:
-  ble:
-    container_name: ble_peripheral
+  pivario:
     build: .
-    image: eliecharra/pivario
     network_mode: host
     privileged: true

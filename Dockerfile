@@ -1,25 +1,17 @@
-FROM resin/rpi-raspbian
+FROM resin/raspberrypi3-node:8-slim
+
+WORKDIR /app
+ADD src /app
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
 	apt-get install -yqq \
-		curl \
-		build-essential \
 		bluetooth \
+		build-essential \
+		python \
 		bluez \
 		libbluetooth-dev \
-		libudev-dev \
-		python \
-		usbutils &&\
-    curl -O https://nodejs.org/dist/v6.11.1/node-v6.11.1-linux-armv6l.tar.xz && \
-    tar -Jxvf node-v6.11.1-linux-armv6l.tar.xz && \
-    cd node-v6.11.1-linux-armv6l && \
-    sudo cp -R * /usr/local &&\
-    npm install -g yarn
+		libudev-dev
 
-WORKDIR /app
-ADD rootfs /
-ADD src/yarn.lock src/package.json /app/
-RUN yarn install
-ADD src /app
+RUN rm -r node_modules && npm install
 
-CMD ["/start.sh"]
+CMD ["npm", "start"]
