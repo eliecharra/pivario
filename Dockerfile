@@ -10,8 +10,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
 		python \
 		bluez \
 		libbluetooth-dev \
-		libudev-dev
-
-RUN rm -r node_modules && npm install
+		libudev-dev &&\
+		npm install
 
 CMD ["npm", "start"]
