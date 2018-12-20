@@ -1,0 +1,8 @@
+language: minimal
+addons:
+  ssh_known_hosts: git.balena-cloud.com
+deploy:
+  provider: script
+  script: bash deploy/deploy.sh
+  on:
+    branch: master
